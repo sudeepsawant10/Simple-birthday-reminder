@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Birthday Reminder</string>
+    <string name="birthday_reminder">Birthday Reminder</string>
+    <string name="name">Name</string>
+    <string name="dob">DOB</string>
+    <string name="days_left">Days Left</string>
+    <string name="turns">Turns</string>
+    <string name="_22">22</string>
+    <string name="sudeep_sawant">sudeep sawant</string>
+    <string name="_45">45</string>
+    <string name="mar_24_1978">Mar, 24 1978</string>
+    <string name="birthday">Birthday</string>
+    <string name="days_until_next_birthday">Days until next Birthday</string>
+    <string name="jim_parsons">Jim Parsons</string>
+    <string name="days_since_birth">Days since birth</string>
+    <string name="add_person">Add Person</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="zodiac">Zodiac</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="save">Save</string>
+</resources>
