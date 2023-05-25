@@ -1,7 +1,29 @@
 package com.sith.birthdayreminder.home;
 
 public class ProfileModel {
-    String name, dob, zodiacSign, age;
+    String name;
+    String dob;
+    String zodiacSign;
+    String age;
+    long profileId;
+
+    public long getProfileId() {
+        return profileId;
+    }
+
+    public void setProfileId(long profileId) {
+        this.profileId = profileId;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    String phoneNo;
 
     public String getName() {
         return name;
@@ -35,10 +57,10 @@ public class ProfileModel {
         this.age = age;
     }
 
-    public ProfileModel(String name, String dob, String zodiacSign, String age) {
-        this.name = name;
-        this.dob = dob;
-        this.zodiacSign = zodiacSign;
-        this.age = age;
-    }
+//    public ProfileModel(String name, String dob, String zodiacSign, String age) {
+//        this.name = name;
+//        this.dob = dob;
+//        this.zodiacSign = zodiacSign;
+//        this.age = age;
+//    }
 }

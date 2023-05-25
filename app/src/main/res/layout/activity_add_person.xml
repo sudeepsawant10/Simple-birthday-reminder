@@ -35,6 +35,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/etPersonName"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
         <TextView
@@ -49,6 +50,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/etPersonDob"
             android:inputType="date"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -64,7 +66,7 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/zodiacSpinner"
+            android:id="@+id/spinnerPersonZodiac"
             android:padding="@dimen/dimen_4dp"
             android:layout_marginRight="@dimen/dimen_64dp"
             android:layout_marginVertical="@dimen/dimen_4dp"/>
@@ -81,6 +83,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/etPersonPhone"
             android:inputType="numberDecimal"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
