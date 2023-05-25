@@ -40,22 +40,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        Recycler View
+//      Recycler View
         profileModelArrayList = new ArrayList<ProfileModel>();
         homeProfileRecyclerView = findViewById(R.id.homeProfileRecyclerView);
-
-        ProfileModel p1 = new ProfileModel("sudeep sawant", "10-11-2000", "Lion", "29");
-        ProfileModel p2 = new ProfileModel("shubham sawant", "10-11-2000", "Lion", "29");
-        ProfileModel p3 = new ProfileModel("Neel sawant", "10-11-2000", "Lion", "29");
-        ProfileModel p4 = new ProfileModel("duru sawant", "10-11-2000", "Lion", "29");
-
-
-        profileModelArrayList.add(p1);
-        profileModelArrayList.add(p2);
-        profileModelArrayList.add(p3);
-        profileModelArrayList.add(p4);
+//
+//        ProfileModel p1 = new ProfileModel("sudeep sawant", "10-11-2000", "Lion", "29");
+//        ProfileModel p2 = new ProfileModel("shubham sawant", "10-11-2000", "Lion", "29");
+//        ProfileModel p3 = new ProfileModel("Neel sawant", "10-11-2000", "Lion", "29");
+//        ProfileModel p4 = new ProfileModel("duru sawant", "10-11-2000", "Lion", "29");
 
 
+//        profileModelArrayList.add(p1);
+//        profileModelArrayList.add(p2);
+//        profileModelArrayList.add(p3);
+//        profileModelArrayList.add(p4);
 
         mainActivityAdaptor = new MainActivityAdaptor(context, profileModelArrayList);
         homeProfileRecyclerView.setLayoutManager(new LinearLayoutManager(context));
