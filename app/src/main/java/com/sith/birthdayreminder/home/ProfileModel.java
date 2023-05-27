@@ -4,7 +4,6 @@ public class ProfileModel {
     String name;
     String dob;
     String zodiacSign;
-    String age;
     long profileId;
 
     public long getProfileId() {
@@ -49,13 +48,7 @@ public class ProfileModel {
         this.zodiacSign = zodiacSign;
     }
 
-    public String getAge() {
-        return age;
-    }
 
-    public void setAge(String age) {
-        this.age = age;
-    }
 
 //    public ProfileModel(String name, String dob, String zodiacSign, String age) {
 //        this.name = name;

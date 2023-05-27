@@ -11,10 +11,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
 import com.sith.birthdayreminder.AddPerson;
 import com.sith.birthdayreminder.DisplayInfo;
 import com.sith.birthdayreminder.R;
+import com.sith.birthdayreminder.firebase.FirebaseDbManager;
 
 import java.util.ArrayList;
 
@@ -60,5 +63,48 @@ public class MainActivity extends AppCompatActivity {
         homeProfileRecyclerView.setAdapter(mainActivityAdaptor);
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshProfiles();
+    }
+
+    private void refreshProfiles() {
+//        get profiles for db
+        FirebaseDbManager.retrieveBirthdayProfiles(context, new FirebaseDbManager.FirebaseCallbackInterface() {
+            @Override
+            public void onComplete(Object object) {
+                if (object == null) {
+                    Toast.makeText(context, "No birthday profiles saved", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    ArrayList<ProfileModel> profileArray = new ArrayList<>();
+                    Iterable<DataSnapshot> profileChildrens = (Iterable<DataSnapshot>) object;
+
+                    for (DataSnapshot singleChildren: profileChildrens){
+                        ProfileModel profileModel =singleChildren.getValue(ProfileModel.class);
+                        profileArray.add(profileModel);
+                    }
+
+                    profileModelArrayList.clear();
+                    profileModelArrayList.addAll(profileArray);
+                    mainActivityAdaptor.notifyDataSetChanged();
+                    homeProfileRecyclerView.scrollToPosition(profileModelArrayList.size()-1);
+
+                }
+            }
+
+            @Override
+            public void onError() {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+        });
     }
 }

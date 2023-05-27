@@ -10,8 +10,11 @@ import com.google.android.gms.tasks.OnCanceledListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.sith.birthdayreminder.home.ProfileModel;
 
 public class FirebaseDbManager {
@@ -38,6 +41,26 @@ public class FirebaseDbManager {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Toast.makeText(context, "Failed to save", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public static void retrieveBirthdayProfiles(Context context, FirebaseCallbackInterface firebaseCallbackInterface) {
+        getReference("profiles").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                long count = snapshot.getChildrenCount();
+                if (count > 0){
+                    firebaseCallbackInterface.onComplete(snapshot.getChildren());
+                }
+                else {
+                    firebaseCallbackInterface.onComplete(null);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                firebaseCallbackInterface.onCancel();
             }
         });
     }
